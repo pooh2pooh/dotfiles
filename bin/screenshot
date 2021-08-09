@@ -1,0 +1,10 @@
+#!/bin/bash
+
+screenshot_name='%Y-%m-%d_$wx$h.png'
+screenshot_path='https://d.poohprod.ru/'
+
+sleep 0.2
+
+scrot -s $screenshot_name  -e 'scp -C '$screenshot_name' pooh@poohprod.ru:/var/www/d.poohprod | echo '$screenshot_path'$f | xclip -i -selection clipboard | notify-send '$screenshot_name' "Скриншот отправлен, ссылка сохранена в буфер\n\n'$screenshot_path'$f" --icon="/home/pooh/.icons/Screenshot-icon.png"'
+
+rm *-*-*_*x*.png

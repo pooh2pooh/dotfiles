@@ -1,0 +1,15 @@
+#!/bin/sh
+prefix="/var/mail"
+if [ ! -f $prefix/num ]; then
+    echo "0" > $prefix/num
+fi
+num=`cat $prefix/num`
+num=$(($num + 1))
+echo $num > $prefix/num
+ 
+name="$prefix/letter$num.txt"
+while read line
+do
+    echo $line >> $name
+done
+/bin/true

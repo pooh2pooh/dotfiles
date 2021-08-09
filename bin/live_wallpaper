@@ -1,0 +1,13 @@
+#!/bin/bash
+x=0
+max_x=41
+while true
+    do
+      if [[ $x -eq $max_x ]]
+        then
+          x=0
+        else
+          feh --bg-tile ~/Wallpapers/wall-$x.jpg
+          x=$((x+1))
+      fi
+    done

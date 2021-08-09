@@ -1,0 +1,285 @@
+# КЛАВИША МОДИФИКАТОР
+set $mod Mod4
+
+# ОТКЛЮЧЕНИЕ ЗАГОЛОВКА ОКНА
+default_border none
+default_floating_border none
+# ОТСТУПЫ
+gaps inner 5
+border_radius 0 
+# Если окно на весь экран, скрываем рамку фокуса
+hide_edge_borders smart
+
+# ЧТОБЫ БЫЛО ЛУЧШЕ ВИДНО АКТИВНОЕ ОКНО
+for_window [tiling] border pixel 2
+#for_window [floating] border pixel 0
+
+# ОКНО ABOUT FIREFOX (TOR)
+for_window [ title="О Mozilla Firefox" ] floating enable
+for_window [ title="About Tor Browser" ] floating enable
+# АРХИВАТОР
+for_window [ class="File-roller" ] floating enable
+# BUBBLE ВСПЛЫВАЮЩИЕ ОКНА YANDEX BROWSER
+for_window [ window_role="bubble" ] floating enable
+for_window [ window_role="bubble" ] border pixel 0
+for_window [ window_role="pop-up" ] floating enable
+for_window [ window_role="pop-up" ] border pixel 0
+for_window [ window_role="browser-window" ] floating enable
+#for_window [ window_role="browser-window" ] border pixel 0
+# LXAPPEARANCE
+for_window [ class="Lxappearance" ] floating enable
+# FILE MANAGER
+for_window [ class="Org.gnome.Nautilus" ] floating enable
+# FIREFOX PICTURE-IN-PICTURE BORDER DISABLE
+for_window [ title="Картинка в картинке" ] border pixel 0
+# XP-Pen Driver UI
+for_window [ class="pentablet" ] floating enable
+#for_window [ class="pentablet" ] border pixel 0
+# flameshot
+for_window [ title="Загрузить в Imgur" ] floating enable
+for_window [ title="Загрузить в Imgur" ] border pixel 0
+# Ryzen Controller
+#for_window [ title="ryzen-controller" ] floating enable
+# Thunderbird
+for_window [ class="Thunderbird" ] floating enable
+#for_window [ class="Thunderbird" ] border pixel 0
+# VSeeFace
+for_window [ class="vseeface.exe" ] floating enable
+# VK Messenger
+for_window [ title="VK Messenger" ] floating enable
+#for_window [ title="VK Messenger" ] border pixel 0
+for_window [ title="VK Messenger" ] move absolute position 1465 36
+# Telegram
+for_window [ class="TelegramDesktop" ] floating enable
+#for_window [ class="TelegramDesktop" ] border pixel 0
+for_window [ class="TelegramDesktop" ] move absolute position 1600 36
+# Counter-Strike 1.6
+for_window [ title="Counter-Strike" ] floating enable
+#for_window [ title="Counter-Strike" ] border pixel 0
+# Sublime Text
+for_window [ class="Subl" ] floating enable
+#for_window [ class="Subl" ] border pixel 0
+# Qt5ct
+for_window [ class="qt5ct" ] floating enable
+#for_window [ class="qt5ct" ] border pixel 0
+# Zenmonitor
+for_window [ class="Zenmonitor" ] floating enable
+#for_window [ class="Zenmonitor" ] border pixel 0
+# Blueman
+for_window [ class="Blueman-manager" ] floating enable
+#for_window [ class="Blueman-manager" ] border pixel 0
+# Figma
+for_window [ class="figma-linux" ] fullscreen enable
+# gucharmap
+for_window [ class="Gucharmap" ] floating enable
+
+# ШРИФТЫ
+font pango:Fira Code 10
+
+# АВТОЗАПУСК
+exec --no-startup-id picom -b
+exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
+#exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
+#exec --no-startup-id feh -z --bg-tile ~/Wallpapers/
+
+# КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
+#set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && changeVolume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && changeVolume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && changeVolume
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# КНОПКИ УПРАВЛЕНИЯ ЯРКОСТЬЮ
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && changeBacklight # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && changeBacklight # decrease screen brightness
+
+# СКОПИРОВАТЬ CLASS ОКНА В БУФФЕР
+bindsym $mod+F1 exec --no-startup-id xproper
+# ОТКРЫТЬ ПЛАВАЮЩИЙ ТЕРМИНАЛ ВНИЗУ
+bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/bin/tmp/id_terminal ~/bin/tmp/stat_terminal
+# SCRATCHPAD
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+bindsym $mod+m [ title="Spotify" ] scratchpad show
+bindsym $mod+n [ class="Org.gnome.Nautilus" ] scratchpad show
+bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
+
+# СДЕЛАТЬ СКРИНШОТ
+#bindsym Print exec --no-startup-id screenshot
+bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot launcher 
+
+# МОДИФИКАТОР ДЛЯ УПРАВЛЕНИЯ ОКНОМ МЫШЬЮ
+floating_modifier $mod
+
+# ОТКЛЮЧИМ СЛЕДОВАНИЕ ФОКУСА ЗА МЫШЬЮ
+focus_follows_mouse yes
+
+# ЗАПУСК ТЕРМИНАЛА
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
+
+# ЗАПУСК ФАЙЛОВОГО МЕНЕДЖЕРА
+bindsym $mod+Shift+Return exec --no-startup-id kitty nnn
+
+# ЗАКРЫТЬ ОКНО
+bindsym $mod+Shift+q kill
+bindsym $mod+x kill
+
+# ЗАПУСК MPV
+bindsym $mod+Shift+m exec xclip -o | xargs mpv
+
+# ЗАПУСК ROFI (Albert)
+#bindsym $mod+d exec --no-startup-id rofi -show run
+#bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+d exec albert toggle
+# A more modern dmenu replacement is rofi:
+# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+# TURBO BOOST TOGGLE
+bindsym $mod+t exec --no-startup-id sudo powersave & powersave_notify
+
+# СМЕНА ФОКУСА НА ДРУГОЕ ОКНО
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# АЛЬТЕРНАТИВНАЯ СМЕНА ФОКУСА НА ДРУГОЕ ОКНО
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# ПЕРЕМЕЩЕНИЕ ФОКУСНОГО ОКНА
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# АЛЬТЕРНАТИВНОЕ ПЕРЕМЕЩЕНИЕ ФОКУСНОГО ОКНА
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# ГОРИЗОНТАЛЬНАЯ ОРИЕНТАЦИЯ НОВОГО ОКНА
+bindsym $mod+g split h
+
+# ВЕРТИКАЛЬНАЯ ОРИЕНТАЦИЯ НОВОГО ОКНА
+bindsym $mod+v split v
+
+# ФУЛЛСКРИН
+bindsym $mod+f fullscreen toggle
+
+# СМЕНИТЬ ТИП КОНТЕЙНЕРА (ВКЛАДКИ)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# СДЕЛАТЬ ОКНО ПЛАВАЮЩИМ
+bindsym $mod+Shift+space floating toggle
+
+# ПЕРЕКЛЮЧЕНИЕ ФОКУСА С ПЛАВАЮЩЕГО ОКНА НА ТАЙЛИНГ
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# ИМЕНА РАБОЧИХ СТОЛОВ
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# ПЕРЕКЛЮЧЕНИЕ РАБОЧИХ СТОЛОВ
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# НАСТРОЙКИ ДЛЯ ОКОН
+## League of Legends ##
+#for_window [ title="League of Legends" ] move to workspace $ws9
+## PHOTOSHOP ##
+#for_window [ class="photoshop.exe" ] fullscreen enable
+#for_window [ class="photoshop.exe" ] floating enable 
+for_window [ title="Adobe Photoshop CC 2018" ] move to workspace $ws10
+
+# ПЕРЕМЕЩЕНИЕ ОКНА НА ДРУГОЙ РАБОЧИЙ СТОЛ
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# ПЕРЕЗАГРУЗИТЬ КОНФИГ
+bindsym $mod+Shift+c reload
+# ПЕРЕЗАГРУЗИТЬ i3
+bindsym $mod+Shift+r restart
+# ВЫХОД ИЗ i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# ИЗМЕНЕНИЕ РАЗМЕРА ОКНА (RESIZE MODE*)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# ЗАПУСТИТЬ polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+# drop-down terminal <3
+exec_always --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
+
+# ОФОРМЛЕНИЕ
+# class                 border  backgr. text    indicator child_border
+client.focused #859900 #859900 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+client.background       #ffffff

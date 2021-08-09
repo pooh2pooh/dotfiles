@@ -1,0 +1,39 @@
+#!/bin/bash
+
+current_governor=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
+
+if [[ "$current_governor" == "schedutil" ]]; then
+
+	echo powersave > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+	echo powersave > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+elif [[ "$current_governor" == "powersave" ]]; then
+
+	echo performance > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+	echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+elif [[ "$current_governor" == "performance" ]]; then
+
+	echo schedutil > /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+	echo schedutil > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+fi
+

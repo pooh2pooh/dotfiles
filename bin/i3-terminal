@@ -1,0 +1,91 @@
+#!/bin/sh
+id_file="$2"         # window to animate
+state_file="$3"      # State file
+
+# Getting screen size
+eval "$( i3-msg -t get_outputs |\
+         jq -r '.[] | select(.active==true)|"display_W=\(.rect.width)\ndisplay_H=\(.rect.height)"')"
+#display_W=1366
+#display_H=768
+                     #   vv - percentage from the screen
+window_W=$(( ( display_W * 59 ) / 100 ))
+window_H=$(( ( display_H * 13 ) / 100 ))
+window_X=$(( ( ( ( display_W - window_W ) * 100 ) / 2 ) / 100 ))   # Middle
+window_Y=$((   ( ( display_H - window_H ) * 100 )       / 105 ))   # Almost bottom
+
+frames=12
+frame_time=0
+step=$(( ( ( window_H * 100 ) / frames ) / 100 ))    # Vertical movement
+
+# Directions. Assumption is that they're opposite
+opening="up"
+closing="down"
+
+animate() {
+    local direction=$1
+    local cur_Y=$(( $window_Y + $window_H ))
+    echo "animation" > $state
+
+    # distance should be equal $window_H, but it is not because of integers
+    until [ $cur_Y -lt $window_Y ] ; do
+        i3-msg -q [id=$window_id] move $direction $step
+        cur_Y=$(( cur_Y - step ))
+        echo "$cur_Y / $window_Y"
+        sleep $frame_time
+    done
+}
+
+open() {
+    if [ "$state" = "closed" ]; then
+        echo "opening" > $state_file
+        i3-msg -q "[id=$window_id] scratchpad show          ;\
+                   [id=$window_id] resize set $window_W $window_H"
+
+        # i3 can't put windows outside of the screen, but can move them there
+        #if [ $(( window_Y + window_H )) -ge $display_H ]; then
+        #   i3-msg -q "[id=$window_id] move absolute position $window_X $(( $display_H -1 )) ;\
+        #              [id=$window_id] move $closing $(( ( window_Y + window_H ) - display_H -1 )) "
+        #else
+            i3-msg -q "[id=$window_id] move absolute position $window_X $(( $window_Y + $window_H ))"
+        #fi
+
+        animate $opening
+        echo "open" > $state_file
+    fi
+}
+
+close() {
+    if [  "$state" = "open" ]; then
+        echo "closing" > $state_file
+        i3-msg -q  "[id=$window_id] floating enable"
+        animate $closing
+        i3-msg -q  "[id=$window_id] move absolute position $(( $display_W - 1 )) $(( $display_H - 1 ));\
+                    [id=$window_id] move scratchpad"
+        echo "closed" > $state_file
+    fi
+}
+
+state="$(     cat $state_file )"
+window_id="$( cat $id_file    )"
+echo "$display_H x $display_W | $window_H x $window_W @ $window_X x $window_Y | $step | $state | $window_id"
+
+case "$1" in
+    start) exec kitty &
+        window_id=$(xdotool search --sync --pid $! )
+        echo "$window_id" > $id_file
+        sleep 1
+        i3-msg -q  "[id=$window_id] floating enable                       ;\
+                    [id=$window_id] mark 'dropdown'                       ;\
+                    [id=$window_id] resize set $window_W $window_H            ;\
+                    [id=$window_id] move absolute position $window_X $window_Y"
+        echo "open" > $state_file
+        ;;
+    open)   open                ;;
+    close)  close               ;;
+    id)     echo "window_id"    ;;
+    toggle) case "$state" in
+                open)   close ;;
+                closed) open  ;;
+                *)            ;;
+            esac                ;;
+esac

@@ -1,0 +1,4 @@
+#!/bin/bash
+sleep 0.2
+
+xprop WM_CLASS | xclip -i

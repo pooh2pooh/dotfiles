@@ -1,0 +1,3 @@
+#!/bin/bash
+trash-empty
+canberra-gtk-play -i trash-empty
