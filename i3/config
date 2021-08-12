@@ -17,8 +17,10 @@ for_window [tiling] border pixel 2
 # ОКНО ABOUT FIREFOX (TOR)
 for_window [ title="О Mozilla Firefox" ] floating enable
 for_window [ title="About Tor Browser" ] floating enable
+
 # АРХИВАТОР
 for_window [ class="File-roller" ] floating enable
+
 # BUBBLE ВСПЛЫВАЮЩИЕ ОКНА YANDEX BROWSER
 for_window [ window_role="bubble" ] floating enable
 for_window [ window_role="bubble" ] border pixel 0
@@ -26,52 +28,74 @@ for_window [ window_role="pop-up" ] floating enable
 for_window [ window_role="pop-up" ] border pixel 0
 for_window [ window_role="browser-window" ] floating enable
 #for_window [ window_role="browser-window" ] border pixel 0
+
 # LXAPPEARANCE
 for_window [ class="Lxappearance" ] floating enable
+
 # FILE MANAGER
 for_window [ class="Org.gnome.Nautilus" ] floating enable
+
 # FIREFOX PICTURE-IN-PICTURE BORDER DISABLE
 for_window [ title="Картинка в картинке" ] border pixel 0
+
 # XP-Pen Driver UI
 for_window [ class="pentablet" ] floating enable
 #for_window [ class="pentablet" ] border pixel 0
+
 # flameshot
 for_window [ title="Загрузить в Imgur" ] floating enable
 for_window [ title="Загрузить в Imgur" ] border pixel 0
+
 # Ryzen Controller
 #for_window [ title="ryzen-controller" ] floating enable
+
 # Thunderbird
 for_window [ class="Thunderbird" ] floating enable
 #for_window [ class="Thunderbird" ] border pixel 0
+
 # VSeeFace
 for_window [ class="vseeface.exe" ] floating enable
+
 # VK Messenger
 for_window [ title="VK Messenger" ] floating enable
 #for_window [ title="VK Messenger" ] border pixel 0
-for_window [ title="VK Messenger" ] move absolute position 1465 36
+for_window [ title="VK Messenger" ] move absolute position 1459 35
+
 # Telegram
 for_window [ class="TelegramDesktop" ] floating enable
 #for_window [ class="TelegramDesktop" ] border pixel 0
-for_window [ class="TelegramDesktop" ] move absolute position 1600 36
+for_window [ class="TelegramDesktop" ] move absolute position 1590 35
+# Choose Files (if qt)
+#for_window [ title="Choose Files" ] move absolute position 1490 517
+
 # Counter-Strike 1.6
-for_window [ title="Counter-Strike" ] floating enable
-#for_window [ title="Counter-Strike" ] border pixel 0
+for_window [ class="cs.exe" ] floating enable
+
 # Sublime Text
 for_window [ class="Subl" ] floating enable
 #for_window [ class="Subl" ] border pixel 0
+
 # Qt5ct
 for_window [ class="qt5ct" ] floating enable
 #for_window [ class="qt5ct" ] border pixel 0
+
 # Zenmonitor
 for_window [ class="Zenmonitor" ] floating enable
 #for_window [ class="Zenmonitor" ] border pixel 0
+
 # Blueman
 for_window [ class="Blueman-manager" ] floating enable
 #for_window [ class="Blueman-manager" ] border pixel 0
+for_window [ class="Blueman-services" ] floating enable
+
 # Figma
 for_window [ class="figma-linux" ] fullscreen enable
+
 # gucharmap
 for_window [ class="Gucharmap" ] floating enable
+
+# Evince
+for_window [ class="Evince" ] floating enable
 
 # ШРИФТЫ
 font pango:Fira Code 10
@@ -106,8 +130,8 @@ bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
 #bindsym Print exec --no-startup-id screenshot
-bindsym Print exec flameshot gui
-bindsym Shift+Print exec flameshot launcher 
+bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+Print exec --no-startup-id flameshot launcher 
 
 # МОДИФИКАТОР ДЛЯ УПРАВЛЕНИЯ ОКНОМ МЫШЬЮ
 floating_modifier $mod

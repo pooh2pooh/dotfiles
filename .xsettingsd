@@ -1,0 +1,7 @@
+Net/EnableEventSounds 1
+Net/EnableInputFeedbackSounds 1
+Net/IconThemeName "custom-icons"
+Xft/Hinting -1
+Xft/HintStyle "hintnone"
+Xft/Antialias -1
+Xft/RGBA "rgb"

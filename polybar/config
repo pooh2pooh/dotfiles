@@ -109,7 +109,7 @@ type = custom/script
 exec = /home/pooh/.config/polybar/arch_updates.sh
 interval = 1800
 label = "%output%"
-click-left = kitty sh -c "pacman -Quq|xargs expac -S -H M '%k\t%n'; read"
+click-left = kitty sh -c "yay -Quq; read"
 
 [module/trash]
 type = custom/script
