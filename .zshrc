@@ -17,6 +17,10 @@ alias v="vim"
 alias n="nnn"
 # termbin to tb
 alias tb="nc termbin.com 9999"
+# clear to c
+alias c="clear"
+# I'M LOVING IT
+alias fuck="sudo !!"
 
 # Autosuggest color (plugin)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff5c77"
