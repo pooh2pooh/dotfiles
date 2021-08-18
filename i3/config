@@ -104,7 +104,7 @@ font pango:Fira Code 10
 exec --no-startup-id picom -b
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
-#exec --no-startup-id feh -z --bg-tile ~/Wallpapers/
+exec --no-startup-id feh -z --bg-tile ~/Wallpapers/2021-08
 
 # КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
 #set $refresh_i3status killall -SIGUSR1 i3status
