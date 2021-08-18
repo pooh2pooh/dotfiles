@@ -9,7 +9,9 @@ if [[ -f $file ]];
 fi
 DATA=$(curl -s 'https://blockchain.info/ru/ticker' | jq -r '.RUB .buy')
 if ping -c1 ya.ru &> /dev/null;
-  then echo $DATA | cut -f1 -d. | numfmt --to=si > $file
+  then
+    echo $DATA | cut -f1 -d. | numfmt --to=si > $file
+    BTC=$(cat $file)
+  else echo $BTC
 fi
-echo $BTC
 #printf "%'.2f\n" $DATA
