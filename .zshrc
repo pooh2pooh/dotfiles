@@ -5,23 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# User configuration
-alias cp="advcp -g"
-alias mv="advmv -g"
-# pacman and yay finder on fzf
-alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
-alias apps="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-# vim to v
-alias v="vim"
-# nnn to n
-alias n="nnn"
-# termbin to tb
-alias tb="nc termbin.com 9999"
-# clear to c
-alias c="clear"
-# I'M LOVING IT
-alias fuck="sudo !!"
-
 # Autosuggest color (plugin)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff5c77"
 
@@ -124,6 +107,22 @@ plugins=(git zsh-autosuggestions)
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+# User aliases
+alias cp="advcp -g"
+alias mv="advmv -g"
+# pacman and yay finder on fzf
+alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias apps="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+# vim to v
+alias v="vim"
+# nnn to n
+alias n="nnn"
+# termbin to tb
+alias tb="nc termbin.com 9999"
+# clear to c
+alias c="clear"
+# I'M LOVING IT
+alias fuck="sudo !!"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

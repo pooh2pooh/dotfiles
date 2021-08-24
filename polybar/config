@@ -78,7 +78,7 @@ cursor-click = pointer
 
 [module/date_custom]
 type = custom/script
-exec = date +%a,\ %d\ %b\ %H:%M
+exec = LC_TIME=en_US.utf8 date +%a,\ %d\ %b\ %l:%M\ %p
 interval = 60
 label = "%output%"
 
@@ -253,7 +253,7 @@ enable-scroll=true
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
+format = <ramp-coreload> <label>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #dc322f

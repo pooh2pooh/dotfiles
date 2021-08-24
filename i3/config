@@ -97,8 +97,12 @@ for_window [ class="Gucharmap" ] floating enable
 # Evince
 for_window [ class="Evince" ] floating enable
 
+# flow-pomodoro
+for_window [ class="flow" ] floating enable
+for_window [ class="flow" ] sticky toggle
+
 # ШРИФТЫ
-font pango:Fira Code 10
+font pango:Iosevka Nerd 10
 
 # АВТОЗАПУСК
 exec --no-startup-id picom -b
@@ -124,9 +128,11 @@ bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/bin/tmp/id_terminal ~/
 # SCRATCHPAD
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-bindsym $mod+m [ title="Spotify" ] scratchpad show
+bindsym $mod+Mod1+m [ title="Spotify" ] scratchpad show
+bindsym $mod+m [ title="SoundCloud" ] scratchpad show
 bindsym $mod+n [ class="Org.gnome.Nautilus" ] scratchpad show
 bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
+bindsym $mod+period [ class="Typora" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
 #bindsym Print exec --no-startup-id screenshot
