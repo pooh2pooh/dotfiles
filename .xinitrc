@@ -18,6 +18,7 @@ albert &
 fusuma &
 parcellite &
 birdtray &
+xbindkeys &
 
 canberra-gtk-play -i service-login &
 

@@ -9,4 +9,3 @@ set autoindent
 set rtp+=~/tabnine-vim
 set noswapfile
 hi Normal ctermbg=none
-set laststatus=2

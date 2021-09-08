@@ -13,5 +13,8 @@ if ping -c1 ya.ru &> /dev/null;
     echo $DATA | cut -f1 -d. | numfmt --to=si > $file
     BTC=$(cat $file)
 fi
-echo $BTC
+if [[ ${#BTC} -ge 5 ]]
+  then echo "Ошибка!"
+  else echo $BTC
+fi
 #printf "%'.2f\n" $DATA

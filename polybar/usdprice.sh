@@ -13,5 +13,8 @@ if ping -c1 ya.ru &> /dev/null;
     echo $DATA | cut -c1-5 > $file
     USD=$(cat $file)
 fi
-echo $USD
+if [[ ${#USD} -ge 6 ]]
+  then echo "Ошибка!"
+  else echo $USD
+fi
 #printf "%s\n" $DATA
