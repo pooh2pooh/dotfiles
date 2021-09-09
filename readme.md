@@ -1,5 +1,7 @@
 # My dotfiles for Arch Linux <3
 
+![screenshot](/home/pooh/dotfiles/readme.assets/screenshot.png)
+
 ## APP AND SCRIPTS:
 
 ### home /bin dir
