@@ -146,7 +146,7 @@ bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/bin/tmp/id_terminal ~/
 # SCRATCHPAD
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-bindsym $mod+Mod1+m [ title="Spotify" ] scratchpad show
+bindsym $mod+Mod1+m [ class="Spotify" ] scratchpad show
 bindsym $mod+m [ title="SoundCloud" ] scratchpad show
 bindsym $mod+n [ class="dolphin" ] scratchpad show
 bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
