@@ -53,9 +53,9 @@ module-margin-right = 1.5
 
 font-0 = Iosevka Nerd Font:size=14;0
 
-modules-left = i3 cpu memory temperature
+modules-left = i3 memory cpu
 modules-center = usdprice btcprice
-modules-right = pulseaudio date_custom boost battery updates-arch-combined trash powermenu
+modules-right = pulseaudio temperature date_custom boost battery updates-arch-combined trash powermenu
 
 tray-position = right
 tray-padding = 7
@@ -253,7 +253,7 @@ enable-scroll=true
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <ramp-coreload> <label>
+format = <label> <ramp-coreload>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #dc322f

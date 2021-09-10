@@ -1,24 +1,24 @@
-# My dotfiles for Arch Linux <3
+# My Arch Linux <3
 
 ![screenshot](screenshot.png)
 
 ## APP AND SCRIPTS:
 
 ### home /bin dir
-**`a2dissite/a2ensite`** – toggle local domain
-**`changeBacklight`** – settings backlight level
-**`changeVolume`** – settings volume level
-**`i3-terminal`** – dropdown terminal (required 'tmp' dir)
-**`iconlookup`** – for icons in terminal (lsd)
-**`live_wallpaper`** – animated wallpaper
-**`powersave/powersave_notify`** – for toggle cpu governor
-**`rebuild_cache`** – icons and fonts cache update
-**`screenshot`** – for screenshots make
-**`sendMail`** – for tests local domain mail send
-**`trashEmpty`** – clean trash
-**`view-svg`** – viewer svg files (nnn)
-**`xproper`** – for get window prop
-**`xterm`** – placebo cmd
+**`a2dissite/a2ensite`** – toggle local domain  
+**`changeBacklight`** – settings backlight level  
+**`changeVolume`** – settings volume level  
+**`i3-terminal`** – dropdown terminal (required 'tmp' dir)  
+**`iconlookup`** – for icons in terminal (lsd)  
+**`live_wallpaper`** – animated wallpaper  
+**`powersave/powersave_notify`** – for toggle cpu governor  
+**`rebuild_cache`** – icons and fonts cache update  
+**`screenshot`** – for screenshots make  
+**`sendMail`** – for tests local domain mail send  
+**`trashEmpty`** – clean trash  
+**`view-svg`** – viewer svg files (nnn)  
+**`xproper`** – for get window prop  
+**`xterm`** – placebo cmd  
 
 ## HOTKEYS:
 <u>$mod = **win_logo**</u>
