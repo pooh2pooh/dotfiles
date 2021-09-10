@@ -21,23 +21,23 @@
 **`xterm`** – placebo cmd  
 
 ## HOTKEYS:
-<u>$mod = **win_logo**</u>
+<u>$mod = **win_logo**</u>  
 <u>Mod1 = **Alt**</u>
 
 ### System
-**`$mod+x`** – kill current window
-**`$mod+Shift+Enter`** – nnn (file manager)
-**`$mod+t`** – turbo boost toggle
-**`$mod+n`** – dolphin (file manager)
+**`$mod+x`** – kill current window  
+**`$mod+Shift+Enter`** – nnn (file manager)  
+**`$mod+t`** – turbo boost toggle  
+**`$mod+n`** – dolphin (file manager)  
 **`$mod+,`** – gucharmap (symbols table)
 
 ### Multimedia
-**`$mod+m`** – soundcloud
-**`$mod+Mod1+m`** – spotify
-**`$mod+Shift+m`** – play video from buffer link in mpv
+**`$mod+m`** – soundcloud  
+**`$mod+Mod1+m`** – spotify  
+**`$mod+Shift+m`** – play video from buffer link in mpv  
 **`$mod+.`** – typora (markdown editor)
 
 ### Messengers
-**`$mod+Mod1+t`** – telegram
+**`$mod+Mod1+t`** – telegram  
 **`$mod+Mod+i`** – instagram
 
