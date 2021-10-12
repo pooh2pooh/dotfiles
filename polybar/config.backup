@@ -18,10 +18,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #9C9C9C
-background-alt = #42403C
+background = #BCC3C3
+background-alt = #002B36
 ;foreground = ${xrdb:color7:#222}
-foreground = #42403C
+foreground = #002B36
 foreground-alt = #BCC3C3
 primary = #ffb52a
 secondary = #dc322f
@@ -31,38 +31,36 @@ alert = #dc322f
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 32
-offset-x = 0
-offset-y = 0
+;offset-x = 1%
+;offset-y = 1%
 radius = 0
 fixed-center = true
 bottom = false
-background-0 = #48463D
-background-1 = #31302b
-foreground = #dfdfdf
+background = ${colors.background-alt}
+foreground = ${colors.foreground-alt}
 
-;line-size = 1
-;line-color = #dfdfdf
+line-size = 1
+line-color = #dfdfdf
 
-;border-size = 1
-;border-color = #073642
+border-size = 1
+border-color = #073642
 
-padding-left = 1
-padding-right = 2
+padding-left = 0
+padding-right = 1
 
 module-margin-left = 1.5
 module-margin-right = 1.5
 
 font-0 = Iosevka Nerd Font:size=14;0
 
-modules-left = xwindow
+modules-left = i3 memory cpu
 modules-center = usdprice btcprice
-modules-right = pulseaudio date_custom boost battery updates-arch-combined trash powermenu
+modules-right = pulseaudio temperature date_custom boost battery updates-arch-combined trash powermenu
 
-;tray-position = right
-;tray-detached = false
-;tray-padding = 7
-;tray-background = #0042403C
-;tray-maxsize = 24
+tray-position = right
+tray-padding = 7
+;tray-background = #0063ff
+tray-maxsize = 24
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -77,33 +75,6 @@ scroll-down = #i3.prev
 
 cursor-click = pointer
 ;cursor-scroll = ns-resize
-
-[bar/bar2]
-width = 100%
-height = 32
-offset-x = 0
-offset-y = 0
-radius = 0
-fixed-center = true
-bottom = true
-
-background = 00000000
-
-tray-position = right
-tray-detached = true
-tray-padding = 7
-tray-background = #0042403C
-tray-maxsize = 24
-
-override-redirect = true
-wm-restack = i3
-
-module-margin-left = 1.5
-module-margin-right = 1.5
-
-modules-left = i3 memory cpu temperature
-
-font-0 = Iosevka Nerd Font:size=14;0
 
 [module/date_custom]
 type = custom/script
@@ -151,7 +122,7 @@ click-right = trashEmpty
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:64:...%
+label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -504,16 +475,12 @@ menu-2-1 = отмена
 menu-2-1-exec = #powermenu.open.0
 
 [settings]
-throttle-output = 5
-throttle-output-for = 10
-screenchange-reload = false
+screenchange-reload = true
 ;compositing-background = xor
-compositing-background = source
-compositing-foreground = over
-compositing-overline = over
-compositing-underline = over
-compositing-border = over
-pseudo-transparency = false
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5

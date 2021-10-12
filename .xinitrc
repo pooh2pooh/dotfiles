@@ -10,7 +10,6 @@ setxkbmap us,ru -option 'grp:caps_toggle,grp_led:caps'
 setxkbmap -option 'compose:rctrl'
 dunst &
 udiskie --tray &
-yandex-disk-indicator &
 nm-applet &
 blueman-applet &
 xsettingsd &

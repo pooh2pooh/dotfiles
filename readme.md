@@ -19,6 +19,8 @@
 **`view-svg`** – viewer svg files (nnn)  
 **`xproper`** – for get window prop  
 **`xterm`** – placebo cmd  
+**`setgid_torify <app_name>`** – launch app from TOR  
+**`iptables_torify`** – add rules for tor
 
 ## HOTKEYS:
 <u>$mod = **win_logo**</u>  
@@ -29,7 +31,10 @@
 **`$mod+Shift+Enter`** – nnn (file manager)  
 **`$mod+t`** – turbo boost toggle  
 **`$mod+n`** – dolphin (file manager)  
-**`$mod+,`** – gucharmap (symbols table)
+**`$mod+,`** – gucharmap (symbols table)  
+**`alt (double click)`** – espanso toggle  
+**`$mod+Shift+minus`** – to scratchpad  
+**`$mod+minus`** – show from scratchpad
 
 ### Multimedia
 **`$mod+m`** – soundcloud  

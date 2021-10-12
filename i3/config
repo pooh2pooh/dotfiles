@@ -21,13 +21,20 @@ for_window [ title="About Tor Browser" ] floating enable
 # АРХИВАТОР
 for_window [ class="File-roller" ] floating enable
 
+# Kvantum Manager
+for_window [ class="Kvantum Manager" ] floating enable
+
 # BUBBLE ВСПЛЫВАЮЩИЕ ОКНА YANDEX BROWSER
 for_window [ window_role="bubble" ] floating enable
 for_window [ window_role="bubble" ] border pixel 0
+# WEB APP (YANDEX.BROWSER)
 for_window [ window_role="pop-up" ] floating enable
-for_window [ window_role="pop-up" ] border pixel 0
+#for_window [ window_role="pop-up" ] border pixel 0
 for_window [ window_role="browser-window" ] floating enable
 #for_window [ window_role="browser-window" ] border pixel 0
+
+# QjackCtl 
+for_window [ class="QjackCtl" ] floating enable
 
 # LXAPPEARANCE
 for_window [ class="Lxappearance" ] floating enable
@@ -37,6 +44,11 @@ for_window [ title="Event Tester" ] floating enable
 
 # FILE MANAGER
 for_window [ class="dolphin" ] floating enable
+for_window [ class="dolphin" ] move absolute position 350 35
+for_window [ title="Удалить безвозвратно" ] move position center
+for_window [ title="Свойства" ] move position center
+for_window [ title="Настройка Dolphin" ] move position center
+for_window [ title="Создание папки" ] move position center
 
 # Spotify
 for_window [ class="Spotify" ] floating enable
@@ -126,7 +138,9 @@ font pango:Iosevka Nerd 10
 exec --no-startup-id picom -b
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
-exec --no-startup-id feh -z --bg-tile ~/Wallpapers/2021-08
+exec --no-startup-id feh --bg-center ~/Wallpapers/2021-09/f895903d426da8abec5a1d0ceb5a0998.jpg
+exec --no-startup-id dolphin 
+for_window [ window_role="Dolphin#1" class="dolphin" ] move scratchpad
 
 # КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
 #set $refresh_i3status killall -SIGUSR1 i3status

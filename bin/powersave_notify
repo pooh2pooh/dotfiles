@@ -3,13 +3,13 @@
 current_governor=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 
 if [[ "$current_governor" == "schedutil" ]]; then
-	dunstify -a "powersave" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/panel/24/battery-caution-symbolic.svg "Режим энергосбережения"
+	dunstify -a "powersave" -u low --icon=/home/pooh/dotfiles/custom-icons/panel/24/battery-caution-symbolic.svg "Режим энергосбережения"
 	canberra-gtk-play -i power-unplug
 elif [[ "$current_governor" == "powersave" ]]; then
-	dunstify -a "powersave" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/panel/24/battery-040.svg "Режим производительности"
+	dunstify -a "powersave" -u low --icon=/home/pooh/dotfiles/custom-icons/panel/24/battery-040.svg "Режим производительности"
 	canberra-gtk-play -i bell
 else
-	dunstify -a "powersave" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/panel/24/battery-060.svg "Оптимальный режим"
+	dunstify -a "powersave" -u low --icon=/home/pooh/dotfiles/custom-icons/panel/24/battery-060.svg "Оптимальный режим"
 	canberra-gtk-play -i power-plug
 fi
 
