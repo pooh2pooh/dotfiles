@@ -101,14 +101,14 @@ wm-restack = i3
 module-margin-left = 1.5
 module-margin-right = 1.5
 
-modules-left = i3 memory cpu temperature
+modules-left = i3 memory cpu temperature filesystem
 
 font-0 = Iosevka Nerd Font:size=14;0
 
 [module/date_custom]
 type = custom/script
 exec = LC_TIME=en_US.utf8 date +%a,\ %d\ %b\ %l:%M\ %p
-interval = 60
+interval = 1 
 label = "%output%"
 
 [module/boost]
@@ -151,7 +151,7 @@ click-right = trashEmpty
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:64:...%
+label = "%{F#999}%title:0:64:...%%{F-}"
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -286,7 +286,7 @@ format = <label> <ramp-coreload>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #dc322f
-label = CPU %percentage%%
+label = %{F#999}CPU%{F-} %percentage%%
 ; Spacing between individual per-core ramps
 ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
@@ -301,7 +301,7 @@ ramp-coreload-7 = █
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
+format-prefix = "%{F#999}RAM%{F-} "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%

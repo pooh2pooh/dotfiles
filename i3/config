@@ -5,7 +5,7 @@ set $mod Mod4
 default_border none
 default_floating_border none
 # ОТСТУПЫ
-gaps inner 5
+gaps inner 9
 border_radius 0 
 # Если окно на весь экран, скрываем рамку фокуса
 hide_edge_borders smart
@@ -49,6 +49,7 @@ for_window [ title="Удалить безвозвратно" ] move position cen
 for_window [ title="Свойства" ] move position center
 for_window [ title="Настройка Dolphin" ] move position center
 for_window [ title="Создание папки" ] move position center
+for_window [ title="Dolphin" ] move position center
 
 # Spotify
 for_window [ class="Spotify" ] floating enable
@@ -167,6 +168,7 @@ bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
 bindsym $mod+period [ class="Typora" ] scratchpad show
 bindsym $mod+Mod1+t [ title="Telegram" ] scratchpad show
 bindsym $mod+Mod1+i [ title="Instagram" ] scratchpad show
+bindsym $mod+Mod1+a [ title="iCloud" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
 #bindsym Print exec --no-startup-id screenshot

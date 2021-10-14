@@ -1,5 +1,9 @@
 # My Arch Linux <3
 
+![image-20211014161757535](image-20211014161757535.png)
+
+### polybar: config.backup
+
 ![screenshot](screenshot.png)
 
 ## APP AND SCRIPTS:
@@ -34,7 +38,8 @@
 **`$mod+,`** – gucharmap (symbols table)  
 **`alt (double click)`** – espanso toggle  
 **`$mod+Shift+minus`** – to scratchpad  
-**`$mod+minus`** – show from scratchpad
+**`$mod+minus`** – show from scratchpad  
+**`$mod+Mod1+a`** – icloud
 
 ### Multimedia
 **`$mod+m`** – soundcloud  
