@@ -53,10 +53,11 @@ module-margin-left = 1.5
 module-margin-right = 1.5
 
 font-0 = Iosevka Nerd Font:size=14;0
+font-1 = Weather Icons:size=12;1
 
 modules-left = xwindow
 modules-center = usdprice btcprice
-modules-right = pulseaudio date_custom boost battery updates-arch-combined trash powermenu
+modules-right = pulseaudio search_button date_custom boost battery powermenu
 
 ;tray-position = right
 ;tray-detached = false
@@ -91,19 +92,33 @@ background = 00000000
 
 tray-position = right
 tray-detached = true
-tray-padding = 7
+tray-padding = 9
 tray-background = #0042403C
 tray-maxsize = 24
 
-override-redirect = true
-wm-restack = i3
+;override-redirect = true
+;wm-restack = i3
 
 module-margin-left = 1.5
 module-margin-right = 1.5
 
-modules-left = i3 memory cpu temperature filesystem
-
 font-0 = Iosevka Nerd Font:size=14;0
+font-1 = Weather Icons:size=12;1
+
+modules-left = i3 memory cpu temperature filesystem updates-arch-combined trash
+modules-center = weather
+
+[module/weather]
+type = custom/script
+exec = /home/pooh/dotfiles/polybar/weather.sh
+interval = 600
+label-font = 2
+
+[module/search_button]
+type = custom/script
+exec = echo "search button for polybar start"
+label = " "
+click-left = albert toggle
 
 [module/date_custom]
 type = custom/script
@@ -175,7 +190,7 @@ interval = 360
 
 mount-0 = /
 
-label-mounted = "  %used%"
+label-mounted = " %used%"
 label-unmounted = "%mountpoint% not mounted"
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -281,8 +296,9 @@ enable-scroll=true
 
 [module/cpu]
 type = internal/cpu
-interval = 0.5
-format = <label> <ramp-coreload>
+interval = 2
+;format = <label> <ramp-coreload>
+format = <label>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #dc322f
@@ -443,7 +459,7 @@ animation-charging-1 = "ﮣ "
 animation-charging-2 = "ﮣ "
 animation-charging-3 = "ﮣ "
 ;animation-charging-foreground = #859900
-animation-charging-framerate = 350
+animation-charging-framerate = 380
 
 ;animation-discharging-0 = 
 ;animation-discharging-1 = 
@@ -460,9 +476,10 @@ hwmon-path = /sys/devices/pci0000:00/0000:00:08.1/0000:03:00.0/hwmon/hwmon3/temp
 base-temperature = 20
 warn-temperature = 60
 
-format = <ramp> <label>
-;format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+;format = <ramp> <label>
+format = <label>
+;format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${colors.secondary}
 
 label = %temperature-c%
