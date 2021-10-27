@@ -10,7 +10,7 @@ msgId="991049"
 # Query amixer for the current volume and whether or not the speaker is muted
 volume="$(pamixer --get-volume)"
 mute="$(pamixer --get-mute)"
-bar="$(seq -s '▮' $(($volume / 2)) | sed 's/[0-9]//g')"
+bar="$(seq -s '' $(($volume / 2)) | sed 's/[0-9]//g')"
 if [[ $volume == 0 || $mute == true ]]; then
     # Show the sound muted notification
     dunstify -a "changeVolume" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/player-volume-muted.svg -r "$msgId" "Звук выключен" 

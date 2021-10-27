@@ -107,6 +107,7 @@ plugins=(git zsh-autosuggestions)
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias kittyconfig="vim ~/dotfiles/kitty/kitty.conf"
 # User aliases
 alias cp="advcp -g"
 alias mv="advmv -g"

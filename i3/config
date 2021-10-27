@@ -208,6 +208,11 @@ bindsym $mod+d exec albert toggle
 # TURBO BOOST TOGGLE
 bindsym $mod+t exec --no-startup-id sudo powersave & powersave_notify
 
+# Уведомления
+bindsym Ctrl+space exec --no-startup-id dunstctl close
+bindsym Ctrl+Shift+space exec --no-startup-id dunstctl close-all
+bindsym Ctrl+grave exec --no-startup-id dunstctl history-pop
+
 # СМЕНА ФОКУСА НА ДРУГОЕ ОКНО
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -283,12 +288,17 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # НАСТРОЙКИ ДЛЯ ОКОН
+
 ## League of Legends ##
 #for_window [ title="League of Legends" ] move to workspace $ws9
+
 ## PHOTOSHOP ##
 #for_window [ class="photoshop.exe" ] fullscreen enable
 #for_window [ class="photoshop.exe" ] floating enable 
 for_window [ title="Adobe Photoshop CC 2018" ] move to workspace $ws10
+
+## PhpStorm ##
+for_window [ class="jetbrains-phpstorm" ] move to workspace $ws2
 
 # ПЕРЕМЕЩЕНИЕ ОКНА НА ДРУГОЙ РАБОЧИЙ СТОЛ
 bindsym $mod+Shift+1 move container to workspace number $ws1

@@ -41,8 +41,8 @@ get_icon() {
     echo $icon
 }
 
-KEY=""
-CITY="Belgorod,RU"
+KEY="ad46fc41dfc99cf35ad50c238d14fe2a"
+CITY="Chernyanka,RU"
 UNITS="metric"
 SYMBOL="°"
 
