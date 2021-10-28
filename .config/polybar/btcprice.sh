@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # CONFIG HERE VAR!
-file=$PWD/dotfiles/polybar/btc.tmp
+file=$PWD/.config/polybar/btc.tmp
 
 if [[ -f $file ]];
   then BTC=$(cat $file)

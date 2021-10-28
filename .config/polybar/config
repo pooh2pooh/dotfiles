@@ -91,7 +91,7 @@ bottom = true
 background = 00000000
 
 tray-position = right
-tray-detached = true
+tray-detached = false
 tray-padding = 9
 tray-background = #0042403C
 tray-maxsize = 24
@@ -107,10 +107,19 @@ font-1 = Weather Icons:size=12;1
 
 modules-left = i3 memory cpu temperature filesystem updates-arch-combined trash
 modules-center = weather
+modules-right = player
+
+[module/player]
+type = custom/script
+exec = ~/.config/polybar/player.sh
+interval = 3
+click-left = playerctl --player=mpv previous &
+click-right = playerctl --player=mpv next &
+click-middle = playerctl --player=mpv play-pause &
 
 [module/weather]
 type = custom/script
-exec = /home/pooh/dotfiles/polybar/weather.sh
+exec = ~/.config/polybar/weather.sh
 interval = 600
 label-font = 2
 
@@ -128,7 +137,7 @@ label = "%output%"
 
 [module/boost]
 type = custom/script
-exec = /home/pooh/.config/polybar/boost.sh
+exec = ~/.config/polybar/boost.sh
 tail = true
 label = "%output%"
 ;label-foreground = ${colors.primary}
@@ -136,32 +145,32 @@ click-left = "sudo powersave"
 
 [module/btcprice]
 type = custom/script
-exec = /home/pooh/.config/polybar/btcprice.sh
+exec = ~/.config/polybar/btcprice.sh
 interval = 600
 label = "%output%"
 format-prefix = " "
 
 [module/usdprice]
 type = custom/script
-exec = /home/pooh/.config/polybar/usdprice.sh
+exec = ~/.config/polybar/usdprice.sh
 interval = 1800
 label = "%output%"
 format-prefix = " "
 
 [module/updates-arch-combined]
 type = custom/script
-exec = /home/pooh/.config/polybar/arch_updates.sh
+exec = ~/.config/polybar/arch_updates.sh
 interval = 1800
 label = "%output%"
 click-left = kitty sh -c "yay -Quq; read"
 
 [module/trash]
 type = custom/script
-exec = /home/pooh/.config/polybar/trash.sh
+exec = ~/.config/polybar/trash.sh
 ;interval = 60
 tail = true
 label = "%output%"
-click-left = gio open /home/pooh/.local/share/Trash/files
+click-left = gio open ~/.local/share/Trash/files
 click-right = trashEmpty
 
 [module/xwindow]

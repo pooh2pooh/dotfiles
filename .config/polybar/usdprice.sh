@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # CONFIG HERE VAR!
-file=$PWD/dotfiles/polybar/usd.tmp
+file=$PWD/.config/polybar/usd.tmp
 
 if [[ -f $file ]];
   then USD=$(cat $file)
