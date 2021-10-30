@@ -4,146 +4,71 @@ set $mod Mod4
 # ОТКЛЮЧЕНИЕ ЗАГОЛОВКА ОКНА
 default_border none
 default_floating_border none
+
 # ОТСТУПЫ
-gaps inner 9
+gaps inner 6
 border_radius 0 
+
+# ОСНОВНОЙ ШРИФТ
+font pango:Iosevka Nerd 10
+
 # Если окно на весь экран, скрываем рамку фокуса
 hide_edge_borders smart
 
 # ЧТОБЫ БЫЛО ЛУЧШЕ ВИДНО АКТИВНОЕ ОКНО
-for_window [tiling] border pixel 2
-#for_window [floating] border pixel 0
+for_window [ tiling ] border pixel 2
+#for_window [ floating ] border pixel 0
 
-# Vokoscreen
+# ПЛАВАЮЩИЕ ОКНА
+for_window [ class="Display" ] floating enable
 for_window [ class="vokoscreenNG" ] floating enable
-# ОКНО ABOUT FIREFOX (TOR)
 for_window [ title="О Mozilla Firefox" ] floating enable
 for_window [ title="About Tor Browser" ] floating enable
-
-# АРХИВАТОР
-for_window [ class="File-roller" ] floating enable
-
-# Kvantum Manager
 for_window [ class="Kvantum Manager" ] floating enable
-
-# BUBBLE ВСПЛЫВАЮЩИЕ ОКНА YANDEX BROWSER
 for_window [ window_role="bubble" ] floating enable
 for_window [ window_role="bubble" ] border pixel 0
-# WEB APP (YANDEX.BROWSER)
 for_window [ window_role="pop-up" ] floating enable
-#for_window [ window_role="pop-up" ] border pixel 0
 for_window [ window_role="browser-window" ] floating enable
-#for_window [ window_role="browser-window" ] border pixel 0
-
-# QjackCtl 
 for_window [ class="QjackCtl" ] floating enable
-
-# LXAPPEARANCE
 for_window [ class="Lxappearance" ] floating enable
-
-# XEV
 for_window [ title="Event Tester" ] floating enable
-
-# FILE MANAGER
-for_window [ class="dolphin" ] floating enable
-for_window [ class="dolphin" ] move absolute position 350 35
-for_window [ title="Удалить безвозвратно" ] move position center
-for_window [ title="Свойства" ] move position center
-for_window [ title="Настройка Dolphin" ] move position center
-for_window [ title="Создание папки" ] move position center
-for_window [ title="Dolphin" ] move position center
-
-# Spotify
 for_window [ class="Spotify" ] floating enable
-
-# FIREFOX PICTURE-IN-PICTURE BORDER DISABLE
 for_window [ title="Картинка в картинке" ] border pixel 0
-
-# XP-Pen Driver UI
 for_window [ class="pentablet" ] floating enable
-#for_window [ class="pentablet" ] border pixel 0
-
-# flameshot
 for_window [ title="Загрузить в Imgur" ] floating enable
 for_window [ title="Загрузить в Imgur" ] border pixel 0
-
-# Ryzen Controller
-#for_window [ title="ryzen-controller" ] floating enable
-
-# Thunderbird
-for_window [ class="Thunderbird" ] floating enable
-#for_window [ class="Thunderbird" ] border pixel 0
-
-# VSeeFace
 for_window [ class="vseeface.exe" ] floating enable
-
-# VK Messenger
 for_window [ class="VK" ] floating enable
-#for_window [ title="VK Messenger" ] border pixel 0
 for_window [ class="VK" ] move absolute position 1515 35
-
-# Telegram
-#for_window [ class="TelegramDesktop" ] floating enable
-#for_window [ class="TelegramDesktop" ] border pixel 0
-#for_window [ class="TelegramDesktop" ] move absolute position 1515 35
 for_window [ class="Yandex-browser-beta" instance="crx_nigookeodlehlnjcpdfifmophdcbjoma" ] move absolute position 1595 40 
-
-# Instagram
 for_window [ class="Instagram" instance="crx_fjpeaicnionajpipomepndgbcpchdmlb" ] move absolute position 1440 40 
-
-# Choose Files (if qt)
-for_window [ title="Choose Files" ] move absolute position 1490 517
-
-# Albert
 for_window [ class="albert" ] move absolute position 760 463
-
-# Counter-Strike 1.6
 for_window [ class="cs.exe" ] floating enable
-
-# Sublime Text
-#for_window [ class="Subl" ] floating enable
-#for_window [ class="Subl" ] border pixel 0
-
-# Qt5ct
+for_window [ class="Subl" ] floating enable
 for_window [ class="qt5ct" ] floating enable
-#for_window [ class="qt5ct" ] border pixel 0
-
-# Zenmonitor
-for_window [ class="Zenmonitor" ] floating enable
-#for_window [ class="Zenmonitor" ] border pixel 0
-
-# Blueman
 for_window [ class="Blueman-manager" ] floating enable
-#for_window [ class="Blueman-manager" ] border pixel 0
 for_window [ class="Blueman-services" ] floating enable
-
-# Figma
 for_window [ class="figma-linux" ] fullscreen enable
-
-# gucharmap
 for_window [ class="Gucharmap" ] floating enable
-
-# Evince
-for_window [ class="Evince" ] floating enable
-
-# flow-pomodoro
 for_window [ class="flow" ] floating enable
 for_window [ class="flow" ] sticky toggle
-
-# mpv
 for_window [ class="mpv" ] floating enable
 for_window [ class="mpv" ] sticky toggle
 
-# ШРИФТЫ
-font pango:Iosevka Nerd 10
-
 # АВТОЗАПУСК
-exec --no-startup-id picom -b
+exec --no-startup-id xbindkeys
+exec --no-startup-id xsettingsd
+exec --no-startup-id dunst
+exec --no-startup-id udiskie --tray
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id albert
+exec --no-startup-id fusuma
+exec --no-startup-id parcellite
+exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
 exec --no-startup-id feh --bg-center ~/Wallpapers/2021-09/f895903d426da8abec5a1d0ceb5a0998.jpg
-exec --no-startup-id dolphin 
-for_window [ window_role="Dolphin#1" class="dolphin" ] move scratchpad
 
 # КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -157,7 +82,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && changeBacklight #
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && changeBacklight # decrease screen brightness
 
 # СКОПИРОВАТЬ CLASS ОКНА В БУФФЕР
-bindsym $mod+F1 exec --no-startup-id xproper
+bindsym $mod+F1 exec sleep 1 && --no-startup-id xproper
 # ОТКРЫТЬ ПЛАВАЮЩИЙ ТЕРМИНАЛ ВНИЗУ
 bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/bin/tmp/id_terminal ~/bin/tmp/stat_terminal
 # SCRATCHPAD
@@ -165,11 +90,11 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+Mod1+m [ class="Spotify" ] scratchpad show
 bindsym $mod+m [ title="SoundCloud" ] scratchpad show
-bindsym $mod+n [ class="dolphin" ] scratchpad show
 bindsym $mod+comma [ class="Gucharmap" ] scratchpad show
 bindsym $mod+period [ class="Typora" ] scratchpad show
 bindsym $mod+Mod1+t [ title="Telegram" ] scratchpad show
 bindsym $mod+Mod1+i [ title="Instagram" ] scratchpad show
+bindsym $mod+Mod1+w [ title="WhatsApp" ] scratchpad show
 bindsym $mod+Mod1+a [ title="iCloud" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
@@ -195,7 +120,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+x kill
 
 # ЗАПУСК MPV
-bindsym $mod+Shift+m exec xclip -o | xargs mpv --no-video
+bindsym $mod+Shift+m exec killall mpv && xclip -o | xargs mpv --no-video
 bindsym $mod+Shift+v exec xclip -o | xargs mpv
 
 # ЗАПУСК ROFI (Albert)
@@ -356,9 +281,32 @@ exec_always --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 
 # ОФОРМЛЕНИЕ
 # class                 border  backgr. text    indicator child_border
-client.focused #859900 #859900 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
-client.placeholder      #000000 #000000 #ffffff #000000   #000000
-client.background       #ffffff
+
+# Solarized Dark
+#client.focused          #859900 #859900 #fdf6e3 #6c71c4
+#client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+#client.unfocused        #073642 #073642 #93a1a1 #586e75
+#client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
+#client.placeholder      #000000 #000000 #ffffff #000000   #000000
+#client.background       #ffffff
+
+# Light Space
+#client.focused          #676E7D #676E7D #FFFFFF #676E7D
+#client.focused_inactive #2f343f #2f343f #FFFFFF #2f343f
+#client.unfocused        #2f343f #2f343f #FFFFFF #2f343f
+#client.urgent           #2f343f #2f343f #ffffff #2f343f
+#client.placeholder      #2f343f #2f343f #ffffff #2f343f
+
+# Black / Lightblue
+#client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
+#client.focused_inactive #212121 #212121 #86888c #292d2e   #5a5a5a
+#client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
+#client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
+#client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
+#client.background       #212121
+
+# Ubuntu
+client.focused          #48463D #48463D #f3f4f5 #4c7899
+client.unfocused        #48463D #48463D #676E7D #333333
+client.focused_inactive #48463D #48463D #676E7D #333333
+client.urgent           #E53935 #E53935 #f3f4f5 #2f343a

@@ -1,6 +1,6 @@
 # NNN
 export NNN_PLUG='p:preview-tui-ext'
-export NNN_BMS='w:~/www;d:~/Загрузки;y:~/Yandex.Disk'
+export NNN_BMS='w:~/www;d:~/Загрузки;y:~/Yandex.Disk;D:~/Документы'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_COLORS='5236'
 export NNN_TRASH=2

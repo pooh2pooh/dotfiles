@@ -118,6 +118,7 @@ alias apps="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 
 alias v="vim"
 # nnn to n
 alias n="nnn"
+alias ncp="cat ${NNN_SEL:-${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.selection} | tr '\0' '\n'"
 # termbin to tb
 alias tb="nc termbin.com 9999"
 # clear to c

@@ -9,3 +9,4 @@ set autoindent
 set rtp+=~/tabnine-vim
 set noswapfile
 hi Normal ctermbg=none
+filetype plugin indent on

@@ -8,16 +8,6 @@ fi
 
 setxkbmap us,ru -option 'grp:caps_toggle,grp_led:caps'
 setxkbmap -option 'compose:rctrl'
-dunst &
-udiskie --tray &
-nm-applet &
-blueman-applet &
-xsettingsd &
-albert &
-fusuma &
-parcellite &
-birdtray &
-xbindkeys &
 
 canberra-gtk-play -i service-login &
 
