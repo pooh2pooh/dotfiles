@@ -1,4 +1,4 @@
-# My Arch Linux <3
+# Dotfiles :heart: Arch Linux
 
 ![image-20211014161757535](image-20211014161757535.png)
 
@@ -49,5 +49,6 @@
 
 ### Messengers
 **`$mod+Mod1+t`** – telegram  
-**`$mod+Mod+i`** – instagram
+**`$mod+Mod+i`** – instagram  
+**`$mod+Mod1+w`** – WhatsApp
 
