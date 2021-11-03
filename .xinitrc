@@ -9,6 +9,10 @@ fi
 setxkbmap us,ru -option 'grp:caps_toggle,grp_led:caps'
 setxkbmap -option 'compose:rctrl'
 
+xbindkeys &
+xsettingsd &
+
 canberra-gtk-play -i service-login &
 
+picom --experimental-backends &
 exec i3

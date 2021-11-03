@@ -7,16 +7,16 @@ default_floating_border none
 
 # ОТСТУПЫ
 gaps inner 6
-border_radius 0 
+border_radius 12 
 
 # ОСНОВНОЙ ШРИФТ
 font pango:Iosevka Nerd 10
 
 # Если окно на весь экран, скрываем рамку фокуса
-hide_edge_borders smart
+#hide_edge_borders smart
 
 # ЧТОБЫ БЫЛО ЛУЧШЕ ВИДНО АКТИВНОЕ ОКНО
-for_window [ tiling ] border pixel 2
+for_window [ tiling ] border pixel 0
 #for_window [ floating ] border pixel 0
 
 # ПЛАВАЮЩИЕ ОКНА
@@ -54,10 +54,9 @@ for_window [ class="flow" ] floating enable
 for_window [ class="flow" ] sticky toggle
 for_window [ class="mpv" ] floating enable
 for_window [ class="mpv" ] sticky toggle
+for_window [ title="win0" ] floating enable
 
 # АВТОЗАПУСК
-exec --no-startup-id xbindkeys
-exec --no-startup-id xsettingsd
 exec --no-startup-id dunst
 exec --no-startup-id udiskie --tray
 exec --no-startup-id nm-applet
@@ -65,8 +64,10 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id albert
 exec --no-startup-id fusuma
 exec --no-startup-id parcellite
-exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
+#exec --no-startup-id picom -b --experimental-backends
+exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
 exec --no-startup-id feh --bg-center ~/Wallpapers/2021-09/f895903d426da8abec5a1d0ceb5a0998.jpg
 
@@ -82,9 +83,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && changeBacklight #
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && changeBacklight # decrease screen brightness
 
 # СКОПИРОВАТЬ CLASS ОКНА В БУФФЕР
-bindsym $mod+F1 exec sleep 1 && --no-startup-id xproper
+bindsym $mod+F1 exec --no-startup-id xproper
 # ОТКРЫТЬ ПЛАВАЮЩИЙ ТЕРМИНАЛ ВНИЗУ
-bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/bin/tmp/id_terminal ~/bin/tmp/stat_terminal
+bindsym $mod+F2 exec --no-startup-id i3-terminal toggle ~/.bin/tmp/id_terminal ~/.bin/tmp/stat_terminal
 # SCRATCHPAD
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -105,7 +106,7 @@ bindsym Shift+Print exec --no-startup-id flameshot launcher
 # МОДИФИКАТОР ДЛЯ УПРАВЛЕНИЯ ОКНОМ МЫШЬЮ
 floating_modifier $mod
 
-# ОТКЛЮЧИМ СЛЕДОВАНИЕ ФОКУСА ЗА МЫШЬЮ
+# СЛЕДОВАНИЕ ФОКУСА ЗА МЫШЬЮ
 focus_follows_mouse yes
 
 # ЗАПУСК ТЕРМИНАЛА
@@ -120,7 +121,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+x kill
 
 # ЗАПУСК MPV
-bindsym $mod+Shift+m exec killall mpv && xclip -o | xargs mpv --no-video
+bindsym $mod+Shift+m exec xclip -o | xargs mpv --no-video
 bindsym $mod+Shift+v exec xclip -o | xargs mpv
 
 # ЗАПУСК ROFI (Albert)
@@ -193,7 +194,7 @@ bindsym $mod+a focus parent
 
 # ИМЕНА РАБОЧИХ СТОЛОВ
 set $ws1 "1"
-set $ws2 "2"
+set $ws2 "2:  "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -274,10 +275,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# ЗАПУСТИТЬ polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-# drop-down terminal <3
-exec_always --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 
 # ОФОРМЛЕНИЕ
 # class                 border  backgr. text    indicator child_border

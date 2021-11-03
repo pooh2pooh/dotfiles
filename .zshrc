@@ -9,7 +9,7 @@ fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff5c77"
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/lib/ccache/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/lib/ccache/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/

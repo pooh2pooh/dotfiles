@@ -6,7 +6,6 @@ set t_Co=256
 set mouse=a
 set nu
 set autoindent
-set rtp+=~/tabnine-vim
 set noswapfile
 hi Normal ctermbg=none
 filetype plugin indent on

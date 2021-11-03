@@ -92,7 +92,7 @@ background = 00000000
 
 tray-position = right
 tray-detached = false
-tray-padding = 9
+tray-padding = 10
 tray-background = #0042403C
 tray-maxsize = 24
 
@@ -113,9 +113,9 @@ modules-right = player
 type = custom/script
 exec = ~/.config/polybar/player.sh
 interval = 3
-click-left = playerctl --player=mpv previous &
-click-right = playerctl --player=mpv next &
-click-middle = playerctl --player=mpv play-pause &
+click-left = playerctl next &
+click-right = playerctl stop &
+click-middle = playerctl play-pause &
 
 [module/weather]
 type = custom/script
