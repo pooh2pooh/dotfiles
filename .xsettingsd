@@ -1,6 +1,6 @@
 Net/EnableEventSounds 1
 Net/EnableInputFeedbackSounds 1
-Net/IconThemeName "Humanity-Dark"
+Net/IconThemeName "la-capitaine-icon-theme"
 Xft/Hinting -1
 Xft/HintStyle "hintnone"
 Xft/Antialias -1

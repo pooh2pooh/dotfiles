@@ -5,6 +5,7 @@ export NNN_FIFO=/tmp/nnn.fifo
 export NNN_COLORS='5236'
 export NNN_TRASH=2
 export ICONLOOKUP=1
+export USE_SCOPE=0
 # FZF
 export FZF_DEFAULT_OPTS="--ansi"
 # DEFAULT

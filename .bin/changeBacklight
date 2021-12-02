@@ -6,7 +6,7 @@ msgId="991048"
 
 # Current backlight
 backlight="$(light -G -r)"
-bar="$(seq -s '' $(($backlight / 5)) | sed 's/[0-9]//g')"
+bar="$(seq -s '' $(($backlight / 6)) | sed 's/[0-9]//g')"
 
 # Show the backlight notification
 dunstify -a "changeBacklight" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/lighttable.svg -r "$msgId" \

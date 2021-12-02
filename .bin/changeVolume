@@ -10,17 +10,16 @@ msgId="991049"
 # Query amixer for the current volume and whether or not the speaker is muted
 volume="$(pamixer --get-volume)"
 mute="$(pamixer --get-mute)"
-bar="$(seq -s '' $(($volume / 2)) | sed 's/[0-9]//g')"
+bar="$(seq -s '' $(($volume / 3)) | sed 's/[0-9]//g')"
 if [[ $volume == 0 || $mute == true ]]; then
     # Show the sound muted notification
-    dunstify -a "changeVolume" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/player-volume-muted.svg -r "$msgId" "Звук выключен" 
-elif [[ $volume -ge 99 ]]; then
+    dunstify -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/player-volume-muted.svg -r "$msgId" "Звук выключен" 
+elif [[ $volume -ge 105 ]]; then
     # Show the sound max notification
     pactl set-sink-volume @DEFAULT_SINK@ 100%
 else
     # Show the volume notification
-    dunstify -a "changeVolume" -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/player-volume.svg -r "$msgId" \
-       " ${bar}"
+    dunstify -u low --icon=/usr/share/icons/la-capitaine-icon-theme/actions/22x22-dark/player-volume.svg -r "$msgId" " ${bar}"
 fi
 
 # Play the volume changed sound

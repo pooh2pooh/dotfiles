@@ -27,13 +27,11 @@ case "$1" in
             AC|ACAD|ADP0|ACPI0003:00)
                 case "$4" in
                     00000000)
-			sudo -i -u pooh mpv /home/pooh/dotfiles/custom-sounds/stereo/power-unplug.oga
-			sudo /home/pooh/bin/powersave powersave
+			sudo -i -u pooh mpv /home/pooh/.sounds/stereo/power-unplug.oga
                         logger 'AC unpluged'
                         ;;
                     00000001)
-			sudo -i -u pooh mpv /home/pooh/dotfiles/custom-sounds/stereo/power-plug.oga
-			sudo /home/pooh/bin/powersave schedutil
+			sudo -i -u pooh mpv /home/pooh/.sounds/stereo/power-plug.oga
                         logger 'AC pluged'
                         ;;
                 esac

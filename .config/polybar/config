@@ -52,11 +52,10 @@ padding-right = 2
 module-margin-left = 1.5
 module-margin-right = 1.5
 
-font-0 = Iosevka Nerd Font:size=14;0
-font-1 = Weather Icons:size=12;1
+font-0 = Iosevka Nerd Font:size=13;0
 
 modules-left = xwindow
-modules-center = usdprice btcprice
+modules-center = player
 modules-right = pulseaudio search_button date_custom boost battery powermenu
 
 ;tray-position = right
@@ -88,12 +87,12 @@ radius = 0
 fixed-center = true
 bottom = true
 
-background = 00000000
+background = #42403C
 
 tray-position = right
-tray-detached = false
+tray-detached = true
 tray-padding = 10
-tray-background = #0042403C
+tray-background = #42403C
 tray-maxsize = 24
 
 ;override-redirect = true
@@ -102,12 +101,15 @@ tray-maxsize = 24
 module-margin-left = 1.5
 module-margin-right = 1.5
 
-font-0 = Iosevka Nerd Font:size=14;0
-font-1 = Weather Icons:size=12;1
+font-0 = Iosevka Nerd Font:size=13;0
+font-1 = Weather Icons:size=13;1
 
-modules-left = i3 memory cpu temperature filesystem updates-arch-combined trash
+modules-left = i3 memory cpu spacer temperature spacer filesystem updates-arch-combined trash spacer usdprice btcprice
 modules-center = weather
-modules-right = player
+
+[module/spacer]
+type = custom/script
+exec = echo "%{F#666}|%{F-}"
 
 [module/player]
 type = custom/script
@@ -116,6 +118,7 @@ interval = 3
 click-left = playerctl next &
 click-right = playerctl stop &
 click-middle = playerctl play-pause &
+padding-right = 20
 
 [module/weather]
 type = custom/script
@@ -175,7 +178,7 @@ click-right = trashEmpty
 
 [module/xwindow]
 type = internal/xwindow
-label = "%{F#999}%title:0:64:...%%{F-}"
+label = "%{F#999}%title:0:128:...%%{F-}"
 
 [module/xkeyboard]
 type = internal/xkeyboard

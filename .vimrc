@@ -1,5 +1,5 @@
 "return" 2>&- || "exit"
-syntax on
+syntax enable
 colorscheme gruvbox
 set bg=dark
 set t_Co=256
