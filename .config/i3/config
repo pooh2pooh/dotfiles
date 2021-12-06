@@ -70,8 +70,7 @@ exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
-exec --no-startup-id feh --bg-center ~/Wallpapers/2021-09/f895903d426da8abec5a1d0ceb5a0998.jpg
-
+#exec --no-startup-id feh --bg-fill ~/Wallpapers/2021-12/906121.jpg
 # КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
 #set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && changeVolume
@@ -121,6 +120,7 @@ bindsym $mod+Shift+Return exec --no-startup-id kitty nnn
 # ЗАКРЫТЬ ОКНО
 bindsym $mod+Shift+q kill
 bindsym $mod+x kill
+bindsym ctrl+q kill
 
 # ЗАПУСК MPV
 bindsym $mod+Shift+m exec xclip -o | xargs mpv --no-video
@@ -130,6 +130,7 @@ bindsym $mod+Shift+v exec xclip -o | xargs mpv
 #bindsym $mod+d exec --no-startup-id rofi -show run
 #bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+d exec albert toggle
+bindsym ctrl+space exec albert toggle
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -140,7 +141,7 @@ bindsym $mod+d exec albert toggle
 bindsym $mod+t exec --no-startup-id sudo powersave & powersave_notify
 
 # Уведомления
-bindsym Ctrl+space exec --no-startup-id dunstctl close
+#bindsym Ctrl+space exec --no-startup-id dunstctl close
 bindsym Ctrl+Shift+space exec --no-startup-id dunstctl close-all
 bindsym Ctrl+grave exec --no-startup-id dunstctl history-pop
 
@@ -196,7 +197,7 @@ bindsym $mod+a focus parent
 
 # ИМЕНА РАБОЧИХ СТОЛОВ
 set $ws1 "1"
-set $ws2 "2:  "
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -223,13 +224,8 @@ bindsym $mod+0 workspace number $ws10
 ## League of Legends ##
 #for_window [ title="League of Legends" ] move to workspace $ws9
 
-## PHOTOSHOP ##
-#for_window [ class="photoshop.exe" ] fullscreen enable
-#for_window [ class="photoshop.exe" ] floating enable 
-for_window [ title="Adobe Photoshop CC 2018" ] move to workspace $ws10
-
 ## PhpStorm ##
-for_window [ class="jetbrains-phpstorm" ] move to workspace $ws2
+#for_window [ class="jetbrains-phpstorm" ] move to workspace $ws2
 
 # ПЕРЕМЕЩЕНИЕ ОКНА НА ДРУГОЙ РАБОЧИЙ СТОЛ
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -282,12 +278,12 @@ bindsym $mod+r mode "resize"
 # class                 border  backgr. text    indicator child_border
 
 # Solarized Dark
-#client.focused          #859900 #859900 #fdf6e3 #6c71c4
-#client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-#client.unfocused        #073642 #073642 #93a1a1 #586e75
-#client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
-#client.placeholder      #000000 #000000 #ffffff #000000   #000000
-#client.background       #ffffff
+client.focused          #859900 #859900 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused        #073642 #073642 #93a1a1 #586e75
+client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+client.background       #ffffff
 
 # Light Space
 #client.focused          #676E7D #676E7D #FFFFFF #676E7D
@@ -305,7 +301,7 @@ bindsym $mod+r mode "resize"
 #client.background       #212121
 
 # Ubuntu
-client.focused          #48463D #48463D #f2f4f6 #4c7899
-client.unfocused        #48463D #48463D #676E7D #333333
-client.focused_inactive #48463D #48463D #676E7D #333333
-client.urgent           #E53935 #E53935 #f2f4f6 #2f343a
+#client.focused          #48463D #48463D #f2f4f6 #4c7899
+#client.unfocused        #48463D #48463D #676E7D #333333
+#client.focused_inactive #48463D #48463D #676E7D #333333
+#client.urgent           #E53935 #E53935 #f2f4f6 #2f343a

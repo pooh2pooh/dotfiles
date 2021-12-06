@@ -7,6 +7,8 @@ ln -sf ${dir}/.bin ${HOME}/.bin
 ln -sf ${dir}/.config/* ${HOME}/.config/
 ln -sf ${dir}/.sounds/* ${HOME}/.sounds/
 
+#laptop-mode config!
+
 for dotfile in "${dotfiles[@]}";do
   ln -sf "${dir}/${dotfile}" "${HOME}"
 done
