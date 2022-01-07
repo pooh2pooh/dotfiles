@@ -121,7 +121,7 @@ alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias apps="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # vim to v
-alias v="nvim"
+alias v="vim"
 
 # nnn to n
 alias n="nnn"

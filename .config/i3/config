@@ -7,13 +7,13 @@ default_floating_border none
 
 # ОТСТУПЫ
 gaps inner 0
-border_radius 0 
+#border_radius 0
 
 # ОСНОВНОЙ ШРИФТ
 font pango:Iosevka Nerd 10
 
 # Если окно на весь экран, скрываем рамку фокуса
-#hide_edge_borders smart
+hide_edge_borders smart
 
 # ЧТОБЫ БЫЛО ЛУЧШЕ ВИДНО АКТИВНОЕ ОКНО
 for_window [ tiling ] border pixel 2
@@ -56,6 +56,10 @@ for_window [ class="mpv" ] floating enable
 for_window [ class="mpv" ] sticky toggle
 for_window [ title="win0" ] floating enable
 for_window [ title="albert" ] border pixel 0
+for_window [ class="Doublecmd" ] floating enable
+#for_window [ class="Doublecmd" ] resize set 1260 880
+for_window [ title="Double Commander 1.0.1 beta build 35; 2021/10/31" ] resize set 1260 880
+for_window [ title="Telegram" ] floating enable
 
 # АВТОЗАПУСК
 exec --no-startup-id dunst
@@ -71,6 +75,7 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
 #exec --no-startup-id feh --bg-fill ~/Wallpapers/2021-12/906121.jpg
+#
 # КНОПКИ УПРАВЛЕНИЯ ГРОМКОСТЬЮ
 #set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && changeVolume
@@ -98,6 +103,7 @@ bindsym $mod+Mod1+i [ title="Instagram" ] scratchpad show
 bindsym $mod+Mod1+w [ title="WhatsApp" ] scratchpad show
 bindsym $mod+Mod1+v [ title="Viber" ] scratchpad show
 bindsym $mod+Mod1+a [ title="iCloud" ] scratchpad show
+bindsym $mod+n [ class="Doublecmd" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
 #bindsym Print exec --no-startup-id screenshot
@@ -112,7 +118,7 @@ focus_follows_mouse yes
 
 # ЗАПУСК ТЕРМИНАЛА
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id kitty
 
 # ЗАПУСК ФАЙЛОВОГО МЕНЕДЖЕРА
 bindsym $mod+Shift+Return exec --no-startup-id kitty nnn
@@ -123,14 +129,14 @@ bindsym $mod+x kill
 bindsym ctrl+q kill
 
 # ЗАПУСК MPV
-bindsym $mod+Shift+m exec xclip -o | xargs mpv --no-video
-bindsym $mod+Shift+v exec xclip -o | xargs mpv
+bindsym $mod+Shift+m exec --no-startup-id xclip -o | xargs mpv --no-video
+bindsym $mod+Shift+v exec --no-startup-id xclip -o | xargs mpv
 
 # ЗАПУСК ROFI (Albert)
 #bindsym $mod+d exec --no-startup-id rofi -show run
 #bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+d exec albert toggle
-bindsym ctrl+space exec albert toggle
+bindsym $mod+d exec --no-startup-id albert toggle
+bindsym ctrl+space exec --no-startup-id albert toggle
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a

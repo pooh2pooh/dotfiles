@@ -54,9 +54,9 @@ module-margin-right = 1.5
 font-0 = Iosevka Nerd Font:size=14;0
 font-1 = Weather Icons:size=13;1
 
-modules-left = i3 memory spacer cpu spacer temperature spacer2 trash
-modules-center = usdprice btcprice
-modules-right = pulseaudio weather date_custom boost battery updates-arch-combined powermenu
+modules-left = i3 filesystem spacer memory spacer cpu spacer temperature spacer2 updates-arch-combined trash pulseaudio
+modules-center = usdprice btcprice spacer weather date_custom
+modules-right = boost battery powermenu
 
 tray-position = right
 tray-padding = 7
@@ -79,7 +79,7 @@ cursor-click = pointer
 
 [module/spacer]
 type = custom/script
-exec = echo "%{F#666}|%{F-}"
+exec = echo "%{F#666}>%{F-}"
 
 [module/spacer2]
 type = custom/script
@@ -268,11 +268,11 @@ enable-scroll=true
 [module/cpu]
 type = internal/cpu
 interval = 0.5
-format = <label> <ramp-coreload>
+format = <ramp-coreload> <label>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #dc322f
-label = CPU %percentage%%
+label = [%percentage%%]
 ; Spacing between individual per-core ramps
 ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
@@ -287,8 +287,8 @@ ramp-coreload-7 = █
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix = "RAM "
+;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%
 

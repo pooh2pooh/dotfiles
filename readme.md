@@ -42,13 +42,16 @@
 **`$mod+Mod1+a`** – icloud
 
 ### Multimedia
+
 **`$mod+m`** – soundcloud  
 **`$mod+Mod1+m`** – spotify  
-**`$mod+Shift+m`** – play video from buffer link in mpv  
+**`$mod+Shift+m`** – play music from buffer link in mpv  
+**`$mod+Shift+v`** – play video from buffer link in mpv  
 **`$mod+.`** – typora (markdown editor)
 
 ### Messengers
 **`$mod+Mod1+t`** – telegram  
-**`$mod+Mod+i`** – instagram  
+**`$mod+Mod1+i`** – instagram  
+**`$mod+Mod1+v`** – viber  
 **`$mod+Mod1+w`** – WhatsApp
 
