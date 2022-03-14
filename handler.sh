@@ -64,7 +64,8 @@ case "$1" in
                 logger 'LID closed'
                 ;;
             open)    
-		sudo -i -u pooh /usr/share/sounds/freedesktop/stereo/service-login.oga
+		sudo -i -u pooh mpv /usr/share/sounds/freedesktop/stereo/service-login.oga
+		#bluetoothctl power on
 		logger 'LID opened'
                 ;;
             *)

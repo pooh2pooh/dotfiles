@@ -3,11 +3,11 @@
 current_governor=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)
 
 if [[ "$current_governor" == "schedutil" ]]; then
-  dunstify -a "powersave" -u critical "Режим энергосбережения"
+  dunstify -a "powersave" -u low "Режим энергосбережения"
 elif [[ "$current_governor" == "powersave" ]]; then
-  dunstify -a "powersave" -u critical "Режим производительности"
+  dunstify -a "powersave" -u low "Режим производительности"
 else
-  dunstify -a "powersave" -u critical "Оптимальный режим"
+  dunstify -a "powersave" -u low "Оптимальный режим"
 fi
 
 canberra-gtk-play -i power-plug

@@ -7,5 +7,5 @@ if [[ $current_governor == "powersave" ]]; then
 elif [[ $current_governor == "performance" ]]; then
 	echo "";
 else
-	echo"";
+	echo "";
 fi

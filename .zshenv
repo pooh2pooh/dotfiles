@@ -16,3 +16,5 @@ export BROWSER=firefox
 export LC_COLLATE="C"
 # qt5ct
 export QT_QPA_PLATFORMTHEME=qt5ct
+#
+export XDG_CURRENT_DESKTOP=GNOME

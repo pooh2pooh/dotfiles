@@ -147,3 +147,17 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Alarm
+alarm() {
+  _t="$1"
+  _src="$2"
+  _alarm() {
+    sleep $_t && notify-send -u critical "Прошло $_t" && echo -en "\a"
+    if [ "$_src" ];	then mpv "$_src"; fi
+  }
+  _alarm &!
+  echo "ok: напомню через $_t"
+  sleep 2
+  exit 0
+}

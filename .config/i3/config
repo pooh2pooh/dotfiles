@@ -28,6 +28,7 @@ for_window [ class="Kvantum Manager" ] floating enable
 for_window [ window_role="bubble" ] floating enable
 for_window [ window_role="bubble" ] border pixel 0
 for_window [ window_role="pop-up" ] floating enable
+for_window [ window_role="Popup" ] floating enable
 for_window [ window_role="browser-window" ] floating enable
 for_window [ class="QjackCtl" ] floating enable
 for_window [ class="Lxappearance" ] floating enable
@@ -44,7 +45,7 @@ for_window [ class="Yandex-browser-beta" instance="crx_nigookeodlehlnjcpdfifmoph
 for_window [ class="Instagram" instance="crx_fjpeaicnionajpipomepndgbcpchdmlb" ] move absolute position 1440 40 
 for_window [ class="albert" ] move absolute position 760 463
 for_window [ class="cs.exe" ] floating enable
-for_window [ class="Subl" ] floating enable
+#for_window [ class="Subl" ] floating enable
 for_window [ class="qt5ct" ] floating enable
 for_window [ class="Blueman-manager" ] floating enable
 for_window [ class="Blueman-services" ] floating enable
@@ -72,7 +73,7 @@ exec --no-startup-id parcellite
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
 #exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
+#exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
 #exec --no-startup-id xwinwrap -fs -ni -s -nf -b -un -argb -- gifview /home/pooh/Downloads/wp2856244-hd-gif-wallpapers.gif -a
 #exec --no-startup-id feh --bg-fill ~/Wallpapers/2021-12/906121.jpg
 #
@@ -114,14 +115,14 @@ bindsym Shift+Print exec --no-startup-id flameshot launcher
 floating_modifier $mod
 
 # СЛЕДОВАНИЕ ФОКУСА ЗА МЫШЬЮ
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # ЗАПУСК ТЕРМИНАЛА
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec --no-startup-id kitty
 
 # ЗАПУСК ФАЙЛОВОГО МЕНЕДЖЕРА
-bindsym $mod+Shift+Return exec --no-startup-id kitty nnn
+bindsym $mod+Shift+Return exec --no-startup-id kitty nnn -e
 
 # ЗАКРЫТЬ ОКНО
 bindsym $mod+Shift+q kill
