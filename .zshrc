@@ -115,6 +115,7 @@ alias dunstconfig="vim ~/.config/dunst/dunstrc"
 # User aliases
 #alias cp="advcp -g"
 #alias mv="advmv -g"
+alias winkill="pkill -9 -f \\.exe"
 
 # pacman and yay finder on fzf
 alias yf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"

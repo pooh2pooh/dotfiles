@@ -1,11 +1,3 @@
-# NNN
-export NNN_PLUG='p:preview-tui-ext'
-export NNN_BMS='w:~/www;d:~/Загрузки;y:~/Yandex.Disk;D:~/Документы'
-export NNN_FIFO=/tmp/nnn.fifo
-export NNN_COLORS='5236'
-export NNN_TRASH=2
-export ICONLOOKUP=1
-export USE_SCOPE=0
 # FZF
 export FZF_DEFAULT_OPTS="--ansi"
 # DEFAULT
@@ -17,4 +9,4 @@ export LC_COLLATE="C"
 # qt5ct
 export QT_QPA_PLATFORMTHEME=qt5ct
 #
-export XDG_CURRENT_DESKTOP=GNOME
+export XDG_CURRENT_DESKTOP=SWAY

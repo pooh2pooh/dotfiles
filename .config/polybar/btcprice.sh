@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # CONFIG HERE VAR!
-file=$PWD/btc.tmp
-oldbtc=$PWD/old_btc.tmp
+file=$PWD/.config/polybar/btc.tmp
+oldbtc=$PWD/.config/polybar/old_btc.tmp
 
 if [[ -f $file ]];
   then BTC=$(cat $file)

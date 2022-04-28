@@ -5,10 +5,6 @@ set $mod Mod4
 default_border none
 default_floating_border none
 
-# ОТСТУПЫ
-gaps inner 0
-#border_radius 0
-
 # ОСНОВНОЙ ШРИФТ
 font pango:Iosevka Nerd 10
 
@@ -54,12 +50,12 @@ for_window [ class="Gucharmap" ] floating enable
 for_window [ class="flow" ] floating enable
 for_window [ class="flow" ] sticky toggle
 for_window [ class="mpv" ] floating enable
-for_window [ class="mpv" ] sticky toggle
+#for_window [ class="mpv" ] sticky toggle
 for_window [ title="win0" ] floating enable
 for_window [ title="albert" ] border pixel 0
-for_window [ class="Doublecmd" ] floating enable
+for_window [ class="Double Commander" ] floating enable
 #for_window [ class="Doublecmd" ] resize set 1260 880
-for_window [ title="Double Commander 1.0.1 beta build 35; 2021/10/31" ] resize set 1260 880
+for_window [ title="Double Commander 1.0.5 beta build 104; 2022/04/09" ] resize set 1260 880
 for_window [ title="Telegram" ] floating enable
 
 # АВТОЗАПУСК
@@ -71,6 +67,7 @@ exec --no-startup-id albert
 exec --no-startup-id fusuma
 exec --no-startup-id parcellite
 exec --no-startup-id redshift -b 1.0:0.7 -t 6500:3200 -l 50:36
+exec --no-startup-id lxpolkit
 #exec --no-startup-id picom -b --experimental-backends
 exec --no-startup-id ~/.config/polybar/launch.sh
 #exec --no-startup-id ~/.config/polybar/dropdown-terminal-launch.sh
@@ -104,7 +101,7 @@ bindsym $mod+Mod1+i [ title="Instagram" ] scratchpad show
 bindsym $mod+Mod1+w [ title="WhatsApp" ] scratchpad show
 bindsym $mod+Mod1+v [ title="Viber" ] scratchpad show
 bindsym $mod+Mod1+a [ title="iCloud" ] scratchpad show
-bindsym $mod+n [ class="Doublecmd" ] scratchpad show
+bindsym $mod+n [ class="Double Commander" ] scratchpad show
 
 # СДЕЛАТЬ СКРИНШОТ
 #bindsym Print exec --no-startup-id screenshot
@@ -119,10 +116,10 @@ focus_follows_mouse no
 
 # ЗАПУСК ТЕРМИНАЛА
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id terminology
 
 # ЗАПУСК ФАЙЛОВОГО МЕНЕДЖЕРА
-bindsym $mod+Shift+Return exec --no-startup-id kitty nnn -e
+bindsym $mod+Shift+Return exec --no-startup-id terminology -e ranger
 
 # ЗАКРЫТЬ ОКНО
 bindsym $mod+Shift+q kill
@@ -130,8 +127,8 @@ bindsym $mod+x kill
 bindsym ctrl+q kill
 
 # ЗАПУСК MPV
-bindsym $mod+Shift+m exec --no-startup-id xclip -o | xargs mpv --no-video
-bindsym $mod+Shift+v exec --no-startup-id xclip -o | xargs mpv
+bindsym $mod+Shift+m exec xclip -o | xargs mpv --no-video
+bindsym $mod+Shift+v exec xclip -o | xargs mpv
 
 # ЗАПУСК ROFI (Albert)
 #bindsym $mod+d exec --no-startup-id rofi -show run
@@ -285,12 +282,12 @@ bindsym $mod+r mode "resize"
 # class                 border  backgr. text    indicator child_border
 
 # Solarized Dark
-client.focused          #859900 #859900 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused        #073642 #073642 #93a1a1 #586e75
-client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
-client.placeholder      #000000 #000000 #ffffff #000000   #000000
-client.background       #ffffff
+#client.focused          #859900 #859900 #fdf6e3 #6c71c4
+#client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+#client.unfocused        #073642 #073642 #93a1a1 #586e75
+#client.urgent           #d33682 #d33682 #fdf6e3 #dc322f
+#client.placeholder      #000000 #000000 #ffffff #000000   #000000
+#client.background       #ffffff
 
 # Light Space
 #client.focused          #676E7D #676E7D #FFFFFF #676E7D
@@ -312,3 +309,11 @@ client.background       #ffffff
 #client.unfocused        #48463D #48463D #676E7D #333333
 #client.focused_inactive #48463D #48463D #676E7D #333333
 #client.urgent           #E53935 #E53935 #f2f4f6 #2f343a
+
+# devpew
+client.focused          #000000 #000000 #ffffff #000000   #000000
+client.focused_inactive #000000 #000000 #ffffff #000000   #000000
+client.unfocused        #000000 #000000 #888888 #000000   #000000
+client.urgent           #000000 #000000 #ffffff #000000   #000000
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+client.background       #ffffff
